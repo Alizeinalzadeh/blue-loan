@@ -1,3 +1,32 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": ["next", "next/core-web-vitals", "prettier"],
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["unused-imports", "@typescript-eslint/eslint-plugin"],
+	"rules": {
+		"no-console": "error",
+		"no-alert": "error",
+		"prefer-const": "warn",
+		"no-var": "error",
+		"unused-imports/no-unused-imports": "error",
+		"no-duplicate-imports": "error",
+		"no-empty": "error",
+		"no-empty-function": "error",
+		"object-shorthand": "error",
+		"no-new-object": "error",
+		"no-array-constructor": "error",
+		"react-hooks/exhaustive-deps": "off",
+		"semi": "warn",
+		"no-multiple-empty-lines": "warn",
+		"no-trailing-spaces": "warn",
+		"no-const-assign": "error",
+		"no-else-return": "error",
+		"eqeqeq": "error",
+		"no-undef-init": "warn",
+		"no-case-declarations": "warn",
+		"no-use-before-define": "error",
+		"no-extra-semi": "warn",
+		"no-unsafe-finally": "warn",
+		"no-useless-catch": "error",
+		"no-useless-return": "error"
+	}
 }
