@@ -26,7 +26,7 @@ body {
 }
 
 a {
-	@apply text-inherit shadow-none no-underline;
+	@apply shadow-none no-underline;
 }
 
 input::-webkit-outer-spin-button,
@@ -36,4 +36,5 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
 	@apply appearance-none;
+	-moz-appearance: textfield;
 }
