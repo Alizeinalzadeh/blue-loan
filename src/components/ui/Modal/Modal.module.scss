@@ -1,0 +1,26 @@
+.backdrop {
+	@apply z-overlay top-0 left-0 fixed w-full h-full overflow-hidden backdrop-blur-base bg-gray-200 dark:bg-overlay;
+}
+.parent {
+	@apply flex justify-center items-center fixed top-0 left-0 z-overlay w-full h-full;
+}
+
+.container {
+	@apply bg-white z-modal overflow-y-auto w-full h-auto max-h-dvh absolute bottom-0 rounded-t-3xl;
+	@apply lg:h-auto lg:w-[480px] lg:rounded-lg lg:relative;
+}
+
+.title-content {
+	@apply flex flex-col justify-center items-center p-4 mb-4;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		@apply rounded-t-3xl shadow-none;
+		width: 100% !important;
+		min-width: 100% !important;
+		max-width: 100% !important;
+		height: auto !important;
+		overflow-y: auto;
+	}
+}
