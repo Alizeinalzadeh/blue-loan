@@ -1,0 +1,87 @@
+.parent {
+	@apply relative flex flex-col gap-3 caret-primary-main;
+	@apply focus-within:border-primary-main;
+}
+
+.input {
+	direction: rtl;
+	@apply bg-surface-light rounded-lg border border-transparent text-sm text-content-primary px-4 py-4 outline-none;
+	@apply placeholder:text-content-secondary;
+	@apply focus:border-primary-main;
+	@apply focus-within:border-primary-main;
+	@apply active:border-primary-main active:border-[1.5px];
+	@apply disabled:pointer-events-none disabled:bg-surface-disable disabled:border-transparent;
+}
+
+.input-helper-right {
+	@apply pr-12;
+}
+
+.input-helper-left {
+	@apply pl-10;
+}
+
+.helper {
+	@apply absolute flex justify-center items-center right-0 bottom-0;
+}
+
+.helper-sm {
+	@apply size-10;
+}
+
+.helper-md {
+	@apply size-12;
+}
+
+.helper-lg {
+	@apply size-14;
+}
+
+.helper-xl {
+	@apply size-16;
+}
+
+.helper-left {
+	@apply left-3 right-auto;
+}
+
+.helper-right {
+	@apply right-0;
+}
+
+.rounded {
+	@apply rounded-full;
+}
+
+.fluid {
+	@apply w-full;
+}
+
+.ltr {
+	direction: ltr !important;
+}
+
+.sm {
+	@apply h-10;
+}
+
+.md {
+	@apply h-12;
+}
+
+.lg {
+	@apply h-14;
+}
+
+.xl {
+	@apply h-16;
+}
+
+.error {
+	@apply border-negative-light;
+	@apply focus:border-negative-light;
+}
+
+.error-message {
+	@apply -mt-2;
+}
