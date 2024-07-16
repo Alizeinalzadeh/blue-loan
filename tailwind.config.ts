@@ -67,6 +67,7 @@ const config: Config = {
 				warning: '#ebd675',
 			},
 			overlay: 'rgba(12, 16, 17, 0.7)',
+			transparent: 'transparent',
 		},
 	},
 	plugins: [],
