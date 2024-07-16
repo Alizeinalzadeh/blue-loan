@@ -1,0 +1,123 @@
+.button {
+	@apply rounded-lg select-none transition-all flex justify-center items-center px-6 py-4 w-fit whitespace-nowrap gap-3 text-sm font-medium relative;
+}
+
+.disabled {
+	@apply disabled:pointer-events-none disabled:select-none disabled:text-content-secondary disabled:bg-primary-light disabled:border-transparent disabled:bg-opacity-50;
+}
+
+.loading {
+	@apply absolute top-0 left-0 w-full h-full flex justify-center items-center z-0;
+}
+
+.filled-primary {
+	@apply bg-primary-main text-content-primary border border-primary-main;
+	@apply lg:hover:bg-primary-light lg:hover:border-primary-light;
+}
+
+.outline-primary {
+	@apply bg-transparent text-primary-main border border-primary-main;
+	@apply lg:hover:bg-primary-light lg:hover:text-primary-light;
+}
+
+.inline-primary {
+	@apply border-none bg-transparent text-primary-main disabled:bg-transparent w-fit px-0 h-fit py-0;
+}
+
+.xs {
+	@apply h-8;
+}
+
+.sm {
+	@apply h-10;
+}
+
+.md {
+	@apply h-12;
+}
+
+.lg {
+	@apply h-14;
+}
+
+.xs-leading {
+	@apply size-8 min-w-[32px] p-0;
+}
+
+.sm-leading {
+	@apply size-10 min-w-[40px] p-0;
+}
+
+.md-leading {
+	@apply size-12 min-w-[48px] p-0;
+}
+
+.lg-leading {
+	@apply size-14 min-w-[56px] p-0;
+}
+
+.rounded {
+	@apply rounded-full;
+}
+
+.left {
+	@apply flex-row;
+}
+
+.right {
+	@apply flex-row-reverse;
+}
+
+.fluid {
+	@apply w-full;
+}
+
+.leading-loading {
+	@apply size-2 min-h-2 min-w-2 rounded-full bg-white relative;
+	box-shadow:
+		32px 0 #fff,
+		-32px 0 #fff;
+	animation: flash 0.5s ease-out infinite alternate;
+}
+
+.normal-loading {
+	@apply w-full h-full flex justify-center items-center relative bg-[#00000050] rounded-full;
+	transform: translateZ(0) scale(1);
+	backface-visibility: hidden;
+	transform-origin: 0 0;
+}
+
+.normal-loading div {
+	@apply size-5 absolute border-[3px] border-white-force border-t-transparent rounded-full top-6 left-6 box-content;
+	animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes flash {
+	0% {
+		background-color: #fff2;
+		box-shadow:
+			32px 0 #fff2,
+			-32px 0 #fff;
+	}
+	50% {
+		background-color: #fff;
+		box-shadow:
+			32px 0 #fff2,
+			-32px 0 #fff2;
+	}
+	100% {
+		background-color: #fff2;
+		box-shadow:
+			32px 0 #fff,
+			-32px 0 #fff2;
+	}
+}
