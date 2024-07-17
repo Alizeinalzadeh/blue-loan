@@ -1,12 +1,12 @@
 .backdrop {
-	@apply z-overlay top-0 left-0 fixed w-full h-full overflow-hidden backdrop-blur-base bg-gray-200 dark:bg-overlay;
+	@apply z-30 top-0 left-0 fixed w-full h-full overflow-hidden bg-overlay;
 }
 .parent {
-	@apply flex justify-center items-center fixed top-0 left-0 z-overlay w-full h-full;
+	@apply flex justify-center items-center fixed top-0 left-0 z-40 w-full h-full;
 }
 
 .container {
-	@apply bg-white z-modal overflow-y-auto w-full h-auto max-h-dvh absolute bottom-0 rounded-t-3xl;
+	@apply bg-surface-secondary z-50 overflow-y-auto w-full h-auto max-h-dvh absolute bottom-0 rounded-t-3xl;
 	@apply lg:h-auto lg:w-[480px] lg:rounded-lg lg:relative;
 }
 

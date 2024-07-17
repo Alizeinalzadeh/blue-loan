@@ -104,7 +104,7 @@ const Modal: React.FC<IModalProps> = ({
 						className={`${classes.container} ${className || ''}`}
 					>
 						<div className={classes.title}>
-							{showBackIcon && <Icon name='arrow/left-long' />}
+							{showBackIcon && <Icon name='arrow/right-long' />}
 							{(title || subTitle) && (
 								<div className={classes['title-content']}>
 									{title && (

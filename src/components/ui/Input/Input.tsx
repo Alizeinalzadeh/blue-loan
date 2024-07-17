@@ -30,47 +30,11 @@ const Input: React.FC<IInputProps> = ({
 	errorCustomClass,
 	hasError,
 	style,
-	regex,
-	customRegexError,
 }) => {
-	const [inputValue, setInputValue] = useState(value);
-	const [inputErrorMessage, setInputErrorMessage] = useState<string | null>(
-		errorMessage!
-	);
-	const [inputHasError, setInputHasError] = useState(hasError);
-
+	const [inputError, setInputError] = useState(hasError);
 	useEffect(() => {
-		setInputHasError(hasError);
-		setInputErrorMessage(errorMessage!);
-	}, [hasError, errorMessage]);
-
-	useEffect(() => {
-		setInputValue(value);
-		if (
-			regex &&
-			value &&
-			value !== undefined &&
-			value !== '' &&
-			value !== 'null'
-		) {
-			if (!regex.test(`${value}`)) {
-				if (customRegexError) {
-					setInputErrorMessage(customRegexError);
-				} else {
-					setInputErrorMessage(
-						errorMessage || 'مقدار وارد شده نامعتبر است'
-					);
-				}
-				setInputHasError(true);
-			} else {
-				if (hasError) {
-					setInputHasError(true);
-				} else {
-					setInputHasError(false);
-				}
-			}
-		}
-	}, [value]);
+		setInputError(hasError);
+	}, [hasError]);
 
 	const parentClass = `
 	${classes.parent}
@@ -84,7 +48,7 @@ const Input: React.FC<IInputProps> = ({
 	${fluid ? classes.fluid : ''}
 	${ltr ? classes.ltr : ''}
 	${size ? classes[size] : ''}
-	${inputHasError ? classes.error : ''}
+	${inputError ? classes.error : ''}
 	${helperIcon ? classes['input-helper-' + helperIconPosition] : ''}
 	${className || ''}
 	`;
@@ -97,7 +61,7 @@ const Input: React.FC<IInputProps> = ({
 			? classes[`helper-${helperIconPosition}`]
 			: classes['helper-right']
 	}
-	${hasError && errorMessage && 'bottom-[26px]'}`;
+	${inputError && errorMessage && 'bottom-[30px]'}`;
 
 	return (
 		<div className={parentClass}>
@@ -135,17 +99,22 @@ const Input: React.FC<IInputProps> = ({
 				onChange={onChange}
 				onBlur={onBlur}
 				placeholder={placeholder}
-				value={inputValue || ''}
+				defaultValue={value || ''}
 				className={inputClass}
 				disabled={disabled}
 				readOnly={readOnly}
 				required={required}
 				autoFocus={autoFocus}
 				style={style}
+				aria-label={typeof label === 'string' ? label : name}
+				aria-disabled={disabled}
+				aria-required={required}
+				aria-invalid={inputError}
+				aria-readonly={readOnly}
 			/>
 
 			{helperIcon && <div className={helperClass}>{helperIcon}</div>}
-			{inputErrorMessage && inputHasError && (
+			{errorMessage && inputError && (
 				<Text
 					variant='span'
 					size='sm'
@@ -154,7 +123,7 @@ const Input: React.FC<IInputProps> = ({
 						errorCustomClass || ''
 					}`}
 				>
-					{inputErrorMessage}
+					{errorMessage}
 				</Text>
 			)}
 		</div>

@@ -75,7 +75,7 @@ const Icon: React.FC<IIconProps> = ({
 			id={id}
 			wrapper='span'
 			className={className || ''}
-			src={`/ssr/static/icons/${name}.svg?type=svg`}
+			src={`/icons/${name}.svg?type=svg`}
 			color={tailwindColor}
 			size={size}
 		>

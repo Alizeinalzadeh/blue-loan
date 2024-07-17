@@ -58,7 +58,8 @@
 }
 
 .ltr {
-	direction: ltr !important;
+	direction: ltr;
+	@apply text-left placeholder:text-right;
 }
 
 .sm {
@@ -78,10 +79,5 @@
 }
 
 .error {
-	@apply border-negative-light;
-	@apply focus:border-negative-light;
-}
-
-.error-message {
-	@apply -mt-2;
+	@apply border-negative-main;
 }

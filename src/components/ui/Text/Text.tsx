@@ -3,9 +3,9 @@ import { ITextProps } from './ITextProps';
 const Text: React.FC<ITextProps> = ({
 	variant = 'p',
 	color = 'content-primary',
-	align,
-	weight = 500,
-	size,
+	align = 'right',
+	weight = 400,
+	size = 'sm',
 	noWrap = false,
 	className,
 	id,
@@ -19,8 +19,8 @@ const Text: React.FC<ITextProps> = ({
 	${'text-' + color}
 	${'text-[' + color + ']'}
     ${'font-[' + weight + ']'}
-	${'text-[' + align + ']'}
-	${'text-[' + size + ']'}
+	${'text-' + align}
+	${'text-' + size}
     ${noWrap ? 'text-nowrap' : 'text-wrap'}
 	${className || ''}
 	`;

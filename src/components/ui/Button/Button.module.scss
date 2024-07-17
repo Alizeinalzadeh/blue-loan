@@ -73,7 +73,7 @@
 }
 
 .leading-loading {
-	@apply size-2 min-h-2 min-w-2 rounded-full bg-white relative;
+	@apply size-2 min-h-2 min-w-2 rounded-full bg-content-primary relative;
 	box-shadow:
 		32px 0 #fff,
 		-32px 0 #fff;
@@ -88,7 +88,7 @@
 }
 
 .normal-loading div {
-	@apply size-5 absolute border-[3px] border-white-force border-t-transparent rounded-full top-6 left-6 box-content;
+	@apply size-5 absolute border-[3px] border-content-primary border-t-transparent rounded-full top-6 left-6 box-content;
 	animation: spinner 1s linear infinite;
 }
 
