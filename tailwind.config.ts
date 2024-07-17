@@ -2,6 +2,20 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
 	important: true,
+	safelist: [
+		{
+			pattern: /bg-*/,
+		},
+		{
+			pattern: /text-*/,
+		},
+		{
+			pattern: /border-*/,
+		},
+		{
+			pattern: /font-*/,
+		},
+	],
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,7 +24,7 @@ const config: Config = {
 	theme: {
 		colors: {
 			primary: {
-				main: '#75AAEB',
+				main: '#3094ea',
 				light: '#2B3440',
 			},
 			background: {
