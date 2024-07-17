@@ -1,0 +1,80 @@
+/** Used to define the position of the ToastContainer **/
+.Toastify__toast-container--top-bottom {
+	padding: 16px !important;
+}
+.Toastify__toast-container--top-center {
+	padding: 16px !important;
+	top: 80px !important;
+	margin-bottom: 16px !important;
+}
+
+/** Classes for the displayed toast **/
+.Toastify__toast {
+	@apply text-content-primary;
+	border-radius: 8px !important;
+	min-height: 48px !important;
+	direction: rtl !important;
+}
+
+.Toastify__toast-body {
+	@apply text-content-primary;
+	display: flex !important;
+	align-items: start !important;
+	justify-content: center !important;
+}
+
+.Toastify__toast-icon svg {
+	display: none !important;
+}
+
+/** handle the notification color and the text color based on the theme **/
+.Toastify__toast-theme--colored.Toastify__toast--success {
+	@apply bg-positive-main;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--success div {
+	@apply text-content-primary;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--success .Toastify__toast-icon {
+	background-image: none !important;
+	background-repeat: no-repeat !important;
+	height: 18px !important;
+	width: 18px !important;
+	background-position: center !important;
+	background-size: contain !important;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--warning {
+	@apply bg-warning-main;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--warning div {
+	@apply text-content-primary;
+}
+.Toastify__toast-theme--colored.Toastify__toast--error {
+	@apply text-content-primary bg-negative-main;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--error div {
+	@apply text-content-primary;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--error .Toastify__toast-icon {
+	background-image: none !important;
+	background-repeat: no-repeat !important;
+	height: 18px !important;
+	width: 18px !important;
+	background-position: center !important;
+	background-size: contain !important;
+}
+
+/** Classes for the close button. Better use your own closeButton **/
+.Toastify__close-button {
+	opacity: 1 !important;
+	padding: 8px 0 0 8px !important;
+}
+
+.Toastify__close-button > svg {
+	@apply text-content-primary fill-content-primary;
+}
