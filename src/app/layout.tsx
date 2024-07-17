@@ -1,3 +1,4 @@
+import LoanLayout from '@/components/Layout/Loan/LoanLayout';
 import '@/styles/globals.css';
 import '@/styles/typography.css';
 import { Viewport } from 'next';
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='fa'>
-			<body>{children}</body>
+			<body className='bg-surface-main'>
+				<LoanLayout>{children}</LoanLayout>
+			</body>
 		</html>
 	);
 }
